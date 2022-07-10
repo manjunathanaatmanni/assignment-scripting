@@ -2,8 +2,10 @@
 mvn clean install
 
 #mvn deploy
+ 
+src=/var/lib/jenkins/workspace/manjupipeline/JuneTeam/target*.war
+dst=/home/ubuntu/repos/assignment-scripting/Newpackages/apache-tomcat/webapps
+sudo cp -f "$src" "$dst" && chown ubuntu:ubuntu /home/ubuntu/repos/assignment-scripting/Newpackages/apache-tomcat
 
-cp /var/lib/jenkins/workspace/manjupipeline/JuneTeam/target*.war /home/ubuntu/repos/assignment-scripting/Newpackages/apache-tomcat/webapps
-
-cd /home/ubuntu/repos/assignment-scripting/Newpackages/apache-tomcat/bin
+sudo cd /home/ubuntu/repos/assignment-scripting/Newpackages/apache-tomcat/bin
 bash startup.sh
